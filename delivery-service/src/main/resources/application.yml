@@ -1,0 +1,24 @@
+server:
+  port: 1111 # Port for the Delivery Service
+
+spring:
+  application:
+    name: delivery-service # Name for Eureka registration
+  datasource:
+    url: jdbc:mysql://localhost:3306/delivery_db # MySQL database URL
+    username: root # Replace with your MySQL username
+    password: root # Replace with your MySQL password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update # Automatically update the database schema
+    show-sql: true # Show SQL queries in the console
+  validation:
+    enabled: true # Validation configuration (enabled by default)
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ # Eureka Server URL
+  instance:
+    prefer-ip-address: true # Register service with IP address instead of hostname
